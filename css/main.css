@@ -36,9 +36,9 @@
 
 
 body {
-  font: 1.0em/1.6em 'Source Code Pro', sans-serif;
+  font: 1.6em/2.0em 'Source Code Pro', sans-serif;
   background: #e5e5e5;
-  color: #999;
+  color: #666;
 }
 h1,
 h2,
@@ -47,7 +47,7 @@ h4,
 h5,
 h6 {
   font-family: SupriaSans, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #777;
+  color: #333;
   font-weight: 300;
 }
 a {
@@ -358,6 +358,9 @@ a:focus {
 #contenders .box {
   background-color: #f9f9f9;
 }
+#contribute .box {
+  background-color: #f9f9f9;
+}
 #services .box {
   padding-bottom: 0;
 }
@@ -480,7 +483,7 @@ a:focus {
 img.logo {
   max-width:150px;
   position:absolute;
-  left: 10px;
+  left: 15px;
   top: 10px;
   z-index:1001;
 }

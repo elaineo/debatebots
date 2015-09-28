@@ -1,0 +1,341 @@
+
+<!-- saved from url=(0054)https://cert.paysecure.acculynk.net/PINPad/PINPad.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>
+	PaySecure
+</title><link id="PINPadCSS" rel="stylesheet" type="text/css" href="PINPad.css"><link id="myCSS" rel="stylesheet" type="text/css" title="myCSS" href="StyleSheetLight.css"><link id="myCSSBillboard" rel="stylesheet" type="text/css" href="Billboard.css">
+    <script language="javascript" src="BigInt.js" type="text/javascript"></script>
+    <script language="javascript" src="Barrett.js" type="text/javascript"></script>
+    <script language="javascript" src="RSA.js" type="text/javascript"></script>
+    <style type="text/css">
+        body
+        {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+<script language="javascript" src="acculynk.mosp.js" type="text/javascript"></script></head>
+<body id="bodyPINPad" onmousemove="reset_interval()" onclick="reset_interval()" onkeypress="reset_interval()" style="background-color: Transparent;">
+    <form name="form1" method="post" action="PINPad.html" id="form1">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMTA2NTgxNjY2D2QWBAIBD2QWBgIBDxYCHgRocmVmBSVTdHlsZVNoZWV0cy9QSU5QYWQuY3NzP3Y9MjAxNDEwMTkwMDAzZAICDxYCHwAFLlN0eWxlU2hlZXRzL1N0eWxlU2hlZXRMaWdodC5jc3M/dj0yMDE0MTAxOTAwMDNkAgMPFgIfAAUoU3R5bGVTaGVldHMvQmlsbGJvYXJkLmNzcz92PTIwMTQxMDE5MDAwM2QCAw9kFgICAQ9kFgYCAw9kFgICAQ8WAh4Dc3JjBSVQaWN0dXJlcy9iaWxsYm9hcmQuZ2lmP3Y9MjAxNDEwMTkwMDAzZAIHDw8WAh4ISW1hZ2VVcmwFGFBpY3R1cmVzL2J0blNlY3VyaXR5LnBuZ2RkAg8PZBYCZg9kFgQCAQ9kFgQCIw8PFgIeBFRleHQFE1hYWFggWFhYWCBYWFhYIDQ0NDRkZAIlD2QWAgIBDxYCHwEFEVBpY3R1cmVzL2luZm8ucG5nZAIDD2QWBAIDD2QWAgIBDw8WBB8CBRl+L1BpY3R1cmVzL3ZlcmlzaWdudjIuZ2lmHg1PbkNsaWVudENsaWNrBY0BVmVyaXNpZ25DbGlja3MrKzsgcmV0dXJuIHBvcGl0dXBWZXJpc2lnbignaHR0cHM6Ly9zZWFsLnZlcmlzaWduLmNvbS9zcGxhc2g/Zm9ybV9maWxlPWZkZi9zcGxhc2guZmRmJmRuPWNlcnQucGF5c2VjdXJlLmFjY3VseW5rLm5ldCZsYW5nPWVuJyk7ZGQCBQ9kFgICAQ8WAh8BBRFQaWN0dXJlcy9pbmZvLnBuZ2QYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgsFEWxiUGVyc29uYWxpemF0aW9uBQxJbWFnZUJ1dHRvbjEFDEltYWdlQnV0dG9uMgUMSW1hZ2VCdXR0b24zBQxJbWFnZUJ1dHRvbjQFDEltYWdlQnV0dG9uNQUMSW1hZ2VCdXR0b242BQxJbWFnZUJ1dHRvbjcFDEltYWdlQnV0dG9uOAUMSW1hZ2VCdXR0b245BQxJbWFnZUJ1dHRvbjCoLjNF20L932NyEdky47yinxYFML9KLMrVum1iPYe2Ww==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="WebResource.axd" type="text/javascript"></script>
+
+
+<script src="ScriptResource.axd" type="text/javascript"></script>
+<script src="ScriptResource(1).axd" type="text/javascript"></script>
+<script src="js" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWKAKPydamAwKZ9JKzBALSwpnTCALSwtXkAgLSwsGJCgLSwv2aBALSwum/CwLSwqXRBQLSwpH2DALSws2HBwLSwrmsDgLSwq2uAQKar7O0AQLt/IbACgKRrprICwKHjde2DgLa7NSLAwLE+8+TBALexIKUCALrpMigBwKotd3TAgLnvdnQCgL8gPnODwKM0ou6DgKY0eDtBQL7yrrQBgLTwqu2CAKIyeGGAQLL7qaVBQL9yIeRDAKQ+v7EAwLbvP7YBAKTw8a2CwKrgKP8CgLh/bSEBAK21NNkAtufzlQCm4mQ5ggCz7XEzg4CoMLwxQcAVw1DR57+luKCIhS5auhaZPaNIAmSmQ7+LSIXOUtsKA==">
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', ['tUpdatePanel1',''], ['lbPersonalization',''], [], 90, '');
+//]]>
+</script>
+
+    <!--Billboard Image-->
+    <div id="divBillboard" style="position: absolute; top: 0px; left: 0px;">
+        <img src="billboard.gif" id="imgBillboard">
+    </div>
+    <!--Billboard Splash-->
+    <div id="divBillboardSplashText" class="BillboardSplashText">
+        <p style="display: table-cell; vertical-align: middle;">
+            You can now enter your PIN when you pay with your Debit Card!  We now offer PaySecure for safe online PIN Debit Purchases.
+        </p>
+    </div>
+    <div id="divPINPad" style="position: absolute; top: 70px; left: 0px;">
+        <!-- PerX Link -->
+        <div style="position: absolute; top: 281px; left: 406px; z-index: 1000;" id="divPerXButton">
+            <input type="image" name="lbPersonalization" id="lbPersonalization" src="btnSecurity.png" onclick="return bPerXEnabled;" style="border-width:0px;">
+        </div>
+        <!-- Network Logo -->
+        <div style="position: absolute; top: 205px; left: 385px; width: 100px; height: 71px;
+            z-index: 1000;" id="divNetworkLogo">
+            <table cellpadding="0" cellspacing="0" style="width: 100px; height: 71px;">
+                <tbody><tr>
+                    <td align="right" valign="middle">
+                        <img src="transparent_pixel.gif" id="NetworkLogoA">
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        <!-- background image -->
+        <div style="position: absolute; visibility: visible; top: 0px; left: 0px;" id="divBackgroundImage">
+            <img src="transparent_pixel.gif" id="imgBackgroundImage">
+        </div>
+        <!-- Timer Text -->
+        <div style="position: absolute; visibility: hidden; top: 15px; left: 15px; width: 470px;
+            z-index: 1000; text-align: center;" class="Timertext" id="strTime">
+        </div>
+        <!-- processing image -->
+        <div style="position: absolute; visibility: visible; top: 138px; left: 227px;" id="divProcessing">
+            <img src="processing.gif" id="imgProcessing">
+        </div>
+        <div id="UpdatePanel1">
+	
+                <!-- HOME PANEL -->
+                <div id="Panel_Home">
+		
+                    <!-- working... -->
+                    <div style="position: absolute; visibility: hidden; top: 185px; left: 370px; text-align: center; width: 115px;" id="divWorking" class="txtWorking" onmouseover="ShowDigit();">
+                        <span id="label_Working" class="txtWorking" style="visibility: hidden;">working</span>
+                    </div>
+                    <!-- PINPad -->
+                    <div style="position: absolute; top: 45px; left: 370px; width: 140px;" id="div5">
+                        <table cellpadding="0" cellspacing="0" id="table_PINPad">
+                            <tbody><tr>
+                                <td height="35" width="35" align="left" valign="top">
+                                    <input type="image" name="ImageButton1" id="ImageButton1" onkeydown="return false;" onerror="JS_Exception(&#39;ImageButton1&#39;)" onmouseover="MouseOver(1);" onmouseout="MouseOut(1);" src="transparent_pixel.gif" onclick="NumberClickController(event,1); return false;" style="border-width: 0px; visibility: hidden;">
+                                </td>
+                                <td width="5">
+                                </td>
+                                <td height="35" width="35">
+                                    <input type="image" name="ImageButton2" id="ImageButton2" onkeydown="return false;" onerror="JS_Exception(&#39;ImageButton2&#39;)" onmouseover="MouseOver(2);" onmouseout="MouseOut(2);" src="transparent_pixel.gif" onclick="NumberClickController(event,2); return false;" style="border-width: 0px; visibility: hidden;">
+                                </td>
+                                <td width="5">
+                                </td>
+                                <td height="35" width="35">
+                                    <input type="image" name="ImageButton3" id="ImageButton3" onkeydown="return false;" onerror="JS_Exception(&#39;ImageButton3&#39;)" onmouseover="MouseOver(3);" onmouseout="MouseOut(3);" src="transparent_pixel.gif" onclick="NumberClickController(event,3); return false;" style="border-width: 0px; visibility: hidden;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" height="5">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="35" width="35">
+                                    <input type="image" name="ImageButton4" id="ImageButton4" onkeydown="return false;" onerror="JS_Exception(&#39;ImageButton4&#39;)" onmouseover="MouseOver(4);" onmouseout="MouseOut(4);" src="transparent_pixel.gif" onclick="NumberClickController(event,4); return false;" style="border-width: 0px; visibility: hidden;">
+                                </td>
+                                <td width="5">
+                                </td>
+                                <td height="35" width="35">
+                                    <input type="image" name="ImageButton5" id="ImageButton5" onkeydown="return false;" onerror="JS_Exception(&#39;ImageButton5&#39;)" onmouseover="MouseOver(5);" onmouseout="MouseOut(5);" src="transparent_pixel.gif" onclick="NumberClickController(event,5); return false;" style="border-width: 0px; visibility: hidden;">
+                                </td>
+                                <td width="5">
+                                </td>
+                                <td height="35" width="35">
+                                    <input type="image" name="ImageButton6" id="ImageButton6" onkeydown="return false;" onerror="JS_Exception(&#39;ImageButton6&#39;)" onmouseover="MouseOver(6);" onmouseout="MouseOut(6);" src="transparent_pixel.gif" onclick="NumberClickController(event,6); return false;" style="border-width: 0px; visibility: hidden;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" height="5">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="35" width="35">
+                                    <input type="image" name="ImageButton7" id="ImageButton7" onkeydown="return false;" onerror="JS_Exception(&#39;ImageButton7&#39;)" onmouseover="MouseOver(7);" onmouseout="MouseOut(7);" src="transparent_pixel.gif" onclick="NumberClickController(event,7); return false;" style="border-width: 0px; visibility: hidden;">
+                                </td>
+                                <td width="5">
+                                </td>
+                                <td height="35" width="35">
+                                    <input type="image" name="ImageButton8" id="ImageButton8" onkeydown="return false;" onerror="JS_Exception(&#39;ImageButton8&#39;)" onmouseover="MouseOver(8);" onmouseout="MouseOut(8);" src="transparent_pixel.gif" onclick="NumberClickController(event,8); return false;" style="border-width: 0px; visibility: hidden;">
+                                </td>
+                                <td width="5">
+                                </td>
+                                <td height="35" width="35">
+                                    <input type="image" name="ImageButton9" id="ImageButton9" onkeydown="return false;" onerror="JS_Exception(&#39;ImageButton9&#39;)" onmouseover="MouseOver(9);" onmouseout="MouseOut(9);" src="transparent_pixel.gif" onclick="NumberClickController(event,9); return false;" style="border-width: 0px; visibility: hidden;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" height="5">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td height="35" width="35">
+                                    <input type="image" name="ImageButton0" id="ImageButton0" onkeydown="return false;" onerror="JS_Exception(&#39;ImageButton0&#39;)" onmouseover="MouseOver(0);" onmouseout="MouseOut(0);" src="transparent_pixel.gif" onclick="NumberClickController(event,0); return false;" style="border-width: 0px; visibility: hidden;">
+                                </td>
+                                <td width="5">
+                                </td>
+                                <td colspan="3" height="35" width="75">
+                                    <a onclick="if (ClearClickController()) return false;" id="ImageButtonClear" class="buttonClear" onkeydown="return false;" onerror="JS_Exception(&#39;ImageButtonClear&#39;)" onmouseover="ShowDigit();" href="javascript:__doPostBack('ImageButtonClear','')" style="visibility: hidden;">
+                                        <div>
+                                            CLEAR</div>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                    <!-- PINPad Instructions -->
+                    <div style="position: absolute; top: 85px; left: 15px; width: 240px;" id="div6">
+                        <table>
+                            <tbody><tr>
+                                <td colspan="2" class="txtPINInstructions">
+                                    <span id="label_Instructions" style="visibility: hidden;">Please use the mouse to enter your PIN.  The keypad will scramble after each selection.</span>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                    <!-- scrambling -->
+                    <div id="AnimationImage" style="position: absolute; visibility: hidden; top: 50px; left: 370px;">
+                        &nbsp;
+                    </div>
+                    <!-- merchant logo -->
+                    
+                    <!--Cancel -->
+                    <div id="divCancel" style="position: absolute; visibility: hidden; top: 265px; left: 15px; width: 400px;" class="txtCancel">
+                        <table>
+                            <tbody><tr>
+                                <td>
+                                    <span id="lbl_Cancel_A" class="txtCancel">PRESS</span>
+                                </td>
+                                <td>
+                                    <a onclick="return Cancel_Click();" id="ImageButtonCancel" class="alink" href="javascript:__doPostBack('ImageButtonCancel','')">
+                                        <span class="btnDefaultSmallLeft"></span><span class="btnDefaultSmallCenter">
+                                            <span id="lblCancelButtonText" class="spanCancelText">CANCEL</span></span>
+                                        <span class="btnDefaultSmallRight"></span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <span id="lbl_Cancel_B" class="txtCancel">TO PROCESS AS CREDIT</span>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                    <!--Status Label -->
+                    <div style="position: absolute; visibility: visible; top: 255px; left: 30px; width: 400px" id="div3">
+                        <span id="label_progress" class="txtStatus">Closing PIN Pad </span>
+                    </div>
+                    <!--Card Number -->
+                    <div style="position: absolute; visibility: hidden; top: 180px; left: 15px; width: 250px;" id="divCardNumber">
+                        <span id="label_CardNumber" class="txtCardNumber" style="visibility: hidden;">XXXX XXXX XXXX 4444</span>
+                    </div>
+                    <!--Back/Stop verbiage -->
+                    <div id="divBackStop" style="position: absolute; top: 295px; left: 15px; vertical-align: middle; text-align: left;
+                        width: 485px;" class="txtBackStop">
+                        <img src="info.png" id="imgInfo" style="vertical-align: middle;">
+                        <span id="lbl_BackStop">DO NOT PRESS THE BACK OR STOP BUTTON IN BROWSER!</span>
+                    </div>
+                    <!--PIN: **** Region -->
+                    <!--SubmitPIN Region -->
+                    <div id="divPINandSubmit" style="position: absolute; top: 220px; left: 15px; width: 400px; height: 35px; visibility: hidden;">
+                        <table>
+                            <tbody><tr>
+                                <td style="height: 30px;">
+                                    <span id="label_PIN" class="PINtext" style="visibility: hidden;">PIN:</span>
+                                </td>
+                                <td style="height: 30px; width: 165px;">
+                                    <span id="LabelSTARS" class="STARtext" style="visibility: hidden;"></span>
+                                </td>
+                                <td align="left">
+                                    <a onclick="return SubmitPIN_Click();" id="ImageButtonSubmitPIN" class="alink" href="javascript:__doPostBack('ImageButtonSubmitPIN','')">
+                                        <span class="btnDefaultLeft"></span><span class="btnDefaultCenter">
+                                            <span id="lblSubmitButtonText" class="spanSubmitTextDisable">SUBMIT</span></span>
+                                        <span class="btnDefaultRight"></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+	</div>
+                <!-- PERSONALIZATION PANEL -->
+                
+                <a id="hiddenException" href="javascript:__doPostBack('hiddenException','')" style="display: none;"></a>
+                <a id="hiddenNumberButton" href="javascript:__doPostBack('hiddenNumberButton','')" style="display: none;"></a>
+                <a id="hiddenImage" href="javascript:__doPostBack('hiddenImage','')" style="display: none;"></a>
+                <a id="hiddenMainController" href="javascript:__doPostBack('hiddenMainController','')" style="display: none;"></a>
+                <a id="hiddenSecondaryController" href="javascript:__doPostBack('hiddenSecondaryController','')" style="display: none;"></a>
+                <input type="hidden" name="hWrappedCoords" id="hWrappedCoords">
+                <input type="hidden" name="hModulus" id="hModulus" value="AFFE07D431EED7432CA7740A81C0E56BE4E2A01F4195FBFC16007F1EE00E06F8AB509963AE13CE46E0156CD1F882B90F2EC111322724A044F7EDCBF64EE751505CDB2505E2589C2EB89B9644E3A4796D3D43661F1EF3BBE58927640134F2EA8A5BBD6AEBEFE8B95FD2CCF622663F7E8EDE7A6A8FBCED0091CB97FB6365C7CD57">
+                <input type="hidden" name="hExponent" id="hExponent" value="010001">
+                <input type="hidden" name="hIWrappedCoords" id="hIWrappedCoords">
+                <input type="hidden" name="hIModulus" id="hIModulus">
+                <input type="hidden" name="hIExponent" id="hIExponent">
+                <input type="hidden" name="hTimeStamp" id="hTimeStamp">
+                <input type="hidden" name="hBgImg" id="hBgImg">
+                <input type="hidden" name="hJS_Exception" id="hJS_Exception">
+                <input type="hidden" name="hSplash" id="hSplash">
+                <input type="hidden" name="hStats" id="hStats" value="none">
+                <input type="hidden" name="hGUID" id="hGUID" value="5b5bc1f1-8167-1729-a27f-83067e2b9142">
+                <input type="hidden" name="hMouseoverEnable" id="hMouseoverEnable" value="false">
+                <input type="hidden" name="hPerXPage" id="hPerXPage" value="NONE">
+                <input type="hidden" name="hstrBackground" id="hstrBackground">
+                <!-- CUP -->
+                <input type="hidden" name="hdnVector" id="hdnVector">                                
+                <input type="hidden" name="hNetworkID" id="hNetworkID">
+                <input type="hidden" name="hActivationStatus" id="hActivationStatus">
+                <input type="hidden" name="hEnrollmentURL" id="hEnrollmentURL">
+                <input type="hidden" name="hdnurlcounter" id="hdnurlcounter" value="1">                
+            
+</div>
+        <!--Processing CUP-->
+        <div id="divProcessingCUP" style="background-image: url(Pictures/backgroundGray.gif); position: absolute; top: 0px; left: 0px; width: 500px; height: 320px; visibility:hidden;">
+        <div id="divProcessingCUPContent" style="position: absolute; top: 115px; left: 0px; width: 500px; height: 90px;">
+            <table style="width: 500px;">
+                <tbody><tr>
+                    <td align="center" style="height:90px;" valign="middle">
+                        <table>
+                            <tbody><tr>
+                            <td style="font:10pt;font-weight:bold;font-family:&#39;Arial&#39;;">Please wait...</td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+        </div>
+                    <!--<td><img id="imgProcessingAnimation" src="Pictures/processing.gif" alt="" /></td>
+                    <td style="width:15px;"></td>-->
+        <iframe id="hiddenCommsIFrame" style="visibility: hidden;"></iframe>
+        <!---EnrollMent Iframe-->
+        
+                <!-----Enrollement----->
+                <div id="divIssuerFrame" style="position: absolute; visibility: hidden; top: 0px; left: 0px;">
+                    <iframe id="iframeID" width="500" height="320" scrolling="yes"></iframe>
+                    
+                </div>
+                <!-----End------------->
+           
+        <!-------EnrollMent Iframe END---------->
+    </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+imgPreload0.src = 'Pictures/transparent_pixel.gif';imgPreload4.src = 'Pictures/scramble.gif';imgPreload9.src = 'Pictures/PerX_PINPad_BG.gif';imgPreload6.src = 'Pictures/verisignv2.gif';CloseOutTime('ACCU800');//]]>
+</script>
+</form>
+    <script language="javascript" type="text/javascript">
+        //Patch for chrome when clicking the security tab
+        Sys.Browser.WebKit = {};
+        if (navigator.userAgent.indexOf('WebKit/') > -1) {
+            Sys.Browser.agent = Sys.Browser.WebKit;
+            Sys.Browser.version = parseFloat(navigator.userAgent.match(/WebKit\/(\d+(\.\d+)?)/)[1]);
+            Sys.Browser.name = 'WebKit';
+        }
+    </script>
+    <script type="text/javascript" language="javascript">
+        function EndRequestHandler(sender, args) {
+            if (args.get_error() != undefined) {
+                var errorMessage = args.get_error().message;
+
+                args.set_errorHandled(true);
+                JS_Exception("EndRequestManager Timeout.")
+            }
+        }
+    </script>
+
+
+<script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>

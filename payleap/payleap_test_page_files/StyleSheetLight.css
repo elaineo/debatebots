@@ -1,0 +1,51 @@
+body{
+    margin: 0px;}
+.PINtext{
+	font-size: 12pt;
+    font-weight:bold;
+	color: Black;
+    font-family: 'Arial';
+}
+.Canceltext{
+	font-size: 10pt;
+    font-weight:bold;
+	color: White;
+    font-family: 'Arial';
+}
+.STARtext{
+	font-size: 14pt;
+    font-weight:bold;
+	color: Yellow;
+    font-family: 'Arial';
+}
+.CardNumbertext{
+	font-size: 12pt;
+    font-weight:bold;
+	color: White;
+    font-family: 'Arial';
+}
+.Versiontext{
+	font-size: 10pt;
+    font-weight:bold;
+	color: White;
+    font-family: 'Arial';
+}
+.Splashtext{
+	font-size: 12pt;
+    font-weight:bold;
+	color: White;
+    font-family: 'Arial';
+}
+.Timertext{
+	font-size: 12pt;
+    font-weight:bold;
+	color: #FF9900;
+    font-family: 'Arial';
+}
+.BackStoptext{
+	color:#FFFFFF;
+	font-weight:bold;
+	font-style:italic;
+	font-size:10pt;
+	font-family: 'Arial';
+}

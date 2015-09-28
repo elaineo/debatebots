@@ -1,0 +1,116 @@
+var ShopperWebService=function() {
+ShopperWebService.initializeBase(this);
+this._timeout = 0;
+this._userContext = null;
+this._succeeded = null;
+this._failed = null;
+}
+ShopperWebService.prototype={
+_get_path:function() {
+ var p = this.get_path();
+ if (p) return p;
+ else return ShopperWebService._staticInstance.get_path();},
+VersionInfo:function(succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'VersionInfo',false,{},succeededCallback,failedCallback,userContext); },
+ForwardRequest:function(transactionID,token,paymentType,merchantID,cardBin,languageCode,networkID,cardno,amount,currency_code,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'ForwardRequest',false,{transactionID:transactionID,token:token,paymentType:paymentType,merchantID:merchantID,cardBin:cardBin,languageCode:languageCode,networkID:networkID,cardno:cardno,amount:amount,currency_code:currency_code},succeededCallback,failedCallback,userContext); },
+MerchantSplash_PinpadType:function(encryptedGuid,modulus,exponent,pinpadType,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'MerchantSplash_PinpadType',false,{encryptedGuid:encryptedGuid,modulus:modulus,exponent:exponent,pinpadType:pinpadType},succeededCallback,failedCallback,userContext); },
+MerchantSplash:function(encryptedGuid,modulus,exponent,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'MerchantSplash',false,{encryptedGuid:encryptedGuid,modulus:modulus,exponent:exponent},succeededCallback,failedCallback,userContext); },
+SecureTerminal:function(encryptedGuid,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'SecureTerminal',false,{encryptedGuid:encryptedGuid},succeededCallback,failedCallback,userContext); },
+TerminalCheck:function(encryptedGuid,terminalData,browserPlatform,browserName,browserVersion,browserType,userHostName,userHostAddress,userAgent,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'TerminalCheck',false,{encryptedGuid:encryptedGuid,terminalData:terminalData,browserPlatform:browserPlatform,browserName:browserName,browserVersion:browserVersion,browserType:browserType,userHostName:userHostName,userHostAddress:userHostAddress,userAgent:userAgent},succeededCallback,failedCallback,userContext); },
+LoadThemePackage:function(encryptedGuid,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'LoadThemePackage',false,{encryptedGuid:encryptedGuid},succeededCallback,failedCallback,userContext); },
+VerifyGeoLocation:function(encryptedGuid,userHostAddress,userHostName,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'VerifyGeoLocation',false,{encryptedGuid:encryptedGuid,userHostAddress:userHostAddress,userHostName:userHostName},succeededCallback,failedCallback,userContext); },
+InitButtonRegions:function(encryptedGuid,x0,y0,size,gap,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'InitButtonRegions',false,{encryptedGuid:encryptedGuid,x0:x0,y0:y0,size:size,gap:gap},succeededCallback,failedCallback,userContext); },
+InitButtonRegionsDynamic:function(encryptedGuid,strXML,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'InitButtonRegionsDynamic',false,{encryptedGuid:encryptedGuid,strXML:strXML},succeededCallback,failedCallback,userContext); },
+RequestPinPackage:function(encryptedGuid,wrapedCoords,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'RequestPinPackage',false,{encryptedGuid:encryptedGuid,wrapedCoords:wrapedCoords},succeededCallback,failedCallback,userContext); },
+SendPinPackage:function(encryptedGuid,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'SendPinPackage',false,{encryptedGuid:encryptedGuid},succeededCallback,failedCallback,userContext); },
+CancelSession:function(encryptedGuid,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'CancelSession',false,{encryptedGuid:encryptedGuid},succeededCallback,failedCallback,userContext); },
+ClearPinPackage:function(encryptedGuid,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'ClearPinPackage',false,{encryptedGuid:encryptedGuid},succeededCallback,failedCallback,userContext); },
+CheckPersonalization:function(encryptedGuid,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'CheckPersonalization',false,{encryptedGuid:encryptedGuid},succeededCallback,failedCallback,userContext); },
+ResetProfile:function(encryptedGuid,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'ResetProfile',false,{encryptedGuid:encryptedGuid},succeededCallback,failedCallback,userContext); },
+ValidateImage:function(encryptedGuid,wrappedCoords,regions,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'ValidateImage',false,{encryptedGuid:encryptedGuid,wrappedCoords:wrappedCoords,regions:regions},succeededCallback,failedCallback,userContext); },
+AddNewUser:function(encryptedGuid,userEMail,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'AddNewUser',false,{encryptedGuid:encryptedGuid,userEMail:userEMail},succeededCallback,failedCallback,userContext); },
+UpdateProfile:function(encryptedGuid,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'UpdateProfile',false,{encryptedGuid:encryptedGuid},succeededCallback,failedCallback,userContext); },
+CheckCUPSMSCodeRequestStatus:function(encryptedGuid,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'CheckCUPSMSCodeRequestStatus',false,{encryptedGuid:encryptedGuid},succeededCallback,failedCallback,userContext); },
+CheckCUPTransaction:function(encryptedGuid,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'CheckCUPTransaction',false,{encryptedGuid:encryptedGuid},succeededCallback,failedCallback,userContext); },
+NetworkSplash:function(encryptedGuid,modulus,exponent,pinpadType,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'NetworkSplash',false,{encryptedGuid:encryptedGuid,modulus:modulus,exponent:exponent,pinpadType:pinpadType},succeededCallback,failedCallback,userContext); },
+CheckCardHolderActivation:function(encryptedGuid,modulus,exponent,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'CheckCardHolderActivation',false,{encryptedGuid:encryptedGuid,modulus:modulus,exponent:exponent},succeededCallback,failedCallback,userContext); },
+GetCUPNotificationData:function(succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetCUPNotificationData',false,{},succeededCallback,failedCallback,userContext); },
+GetCUPCardActivationStatus:function(strGuid,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetCUPCardActivationStatus',false,{strGuid:strGuid},succeededCallback,failedCallback,userContext); }}
+ShopperWebService.registerClass('ShopperWebService',Sys.Net.WebServiceProxy);
+ShopperWebService._staticInstance = new ShopperWebService();
+ShopperWebService.set_path = function(value) { ShopperWebService._staticInstance.set_path(value); }
+ShopperWebService.get_path = function() { return ShopperWebService._staticInstance.get_path(); }
+ShopperWebService.set_timeout = function(value) { ShopperWebService._staticInstance.set_timeout(value); }
+ShopperWebService.get_timeout = function() { return ShopperWebService._staticInstance.get_timeout(); }
+ShopperWebService.set_defaultUserContext = function(value) { ShopperWebService._staticInstance.set_defaultUserContext(value); }
+ShopperWebService.get_defaultUserContext = function() { return ShopperWebService._staticInstance.get_defaultUserContext(); }
+ShopperWebService.set_defaultSucceededCallback = function(value) { ShopperWebService._staticInstance.set_defaultSucceededCallback(value); }
+ShopperWebService.get_defaultSucceededCallback = function() { return ShopperWebService._staticInstance.get_defaultSucceededCallback(); }
+ShopperWebService.set_defaultFailedCallback = function(value) { ShopperWebService._staticInstance.set_defaultFailedCallback(value); }
+ShopperWebService.get_defaultFailedCallback = function() { return ShopperWebService._staticInstance.get_defaultFailedCallback(); }
+ShopperWebService.set_enableJsonp = function(value) { ShopperWebService._staticInstance.set_enableJsonp(value); }
+ShopperWebService.get_enableJsonp = function() { return ShopperWebService._staticInstance.get_enableJsonp(); }
+ShopperWebService.set_jsonpCallbackParameter = function(value) { ShopperWebService._staticInstance.set_jsonpCallbackParameter(value); }
+ShopperWebService.get_jsonpCallbackParameter = function() { return ShopperWebService._staticInstance.get_jsonpCallbackParameter(); }
+ShopperWebService.set_path("/SWAS/ShopperWebService.asmx");
+ShopperWebService.VersionInfo= function(onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.VersionInfo(onSuccess,onFailed,userContext); }
+ShopperWebService.ForwardRequest= function(transactionID,token,paymentType,merchantID,cardBin,languageCode,networkID,cardno,amount,currency_code,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.ForwardRequest(transactionID,token,paymentType,merchantID,cardBin,languageCode,networkID,cardno,amount,currency_code,onSuccess,onFailed,userContext); }
+ShopperWebService.MerchantSplash_PinpadType= function(encryptedGuid,modulus,exponent,pinpadType,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.MerchantSplash_PinpadType(encryptedGuid,modulus,exponent,pinpadType,onSuccess,onFailed,userContext); }
+ShopperWebService.MerchantSplash= function(encryptedGuid,modulus,exponent,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.MerchantSplash(encryptedGuid,modulus,exponent,onSuccess,onFailed,userContext); }
+ShopperWebService.SecureTerminal= function(encryptedGuid,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.SecureTerminal(encryptedGuid,onSuccess,onFailed,userContext); }
+ShopperWebService.TerminalCheck= function(encryptedGuid,terminalData,browserPlatform,browserName,browserVersion,browserType,userHostName,userHostAddress,userAgent,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.TerminalCheck(encryptedGuid,terminalData,browserPlatform,browserName,browserVersion,browserType,userHostName,userHostAddress,userAgent,onSuccess,onFailed,userContext); }
+ShopperWebService.LoadThemePackage= function(encryptedGuid,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.LoadThemePackage(encryptedGuid,onSuccess,onFailed,userContext); }
+ShopperWebService.VerifyGeoLocation= function(encryptedGuid,userHostAddress,userHostName,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.VerifyGeoLocation(encryptedGuid,userHostAddress,userHostName,onSuccess,onFailed,userContext); }
+ShopperWebService.InitButtonRegions= function(encryptedGuid,x0,y0,size,gap,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.InitButtonRegions(encryptedGuid,x0,y0,size,gap,onSuccess,onFailed,userContext); }
+ShopperWebService.InitButtonRegionsDynamic= function(encryptedGuid,strXML,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.InitButtonRegionsDynamic(encryptedGuid,strXML,onSuccess,onFailed,userContext); }
+ShopperWebService.RequestPinPackage= function(encryptedGuid,wrapedCoords,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.RequestPinPackage(encryptedGuid,wrapedCoords,onSuccess,onFailed,userContext); }
+ShopperWebService.SendPinPackage= function(encryptedGuid,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.SendPinPackage(encryptedGuid,onSuccess,onFailed,userContext); }
+ShopperWebService.CancelSession= function(encryptedGuid,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.CancelSession(encryptedGuid,onSuccess,onFailed,userContext); }
+ShopperWebService.ClearPinPackage= function(encryptedGuid,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.ClearPinPackage(encryptedGuid,onSuccess,onFailed,userContext); }
+ShopperWebService.CheckPersonalization= function(encryptedGuid,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.CheckPersonalization(encryptedGuid,onSuccess,onFailed,userContext); }
+ShopperWebService.ResetProfile= function(encryptedGuid,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.ResetProfile(encryptedGuid,onSuccess,onFailed,userContext); }
+ShopperWebService.ValidateImage= function(encryptedGuid,wrappedCoords,regions,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.ValidateImage(encryptedGuid,wrappedCoords,regions,onSuccess,onFailed,userContext); }
+ShopperWebService.AddNewUser= function(encryptedGuid,userEMail,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.AddNewUser(encryptedGuid,userEMail,onSuccess,onFailed,userContext); }
+ShopperWebService.UpdateProfile= function(encryptedGuid,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.UpdateProfile(encryptedGuid,onSuccess,onFailed,userContext); }
+ShopperWebService.CheckCUPSMSCodeRequestStatus= function(encryptedGuid,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.CheckCUPSMSCodeRequestStatus(encryptedGuid,onSuccess,onFailed,userContext); }
+ShopperWebService.CheckCUPTransaction= function(encryptedGuid,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.CheckCUPTransaction(encryptedGuid,onSuccess,onFailed,userContext); }
+ShopperWebService.NetworkSplash= function(encryptedGuid,modulus,exponent,pinpadType,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.NetworkSplash(encryptedGuid,modulus,exponent,pinpadType,onSuccess,onFailed,userContext); }
+ShopperWebService.CheckCardHolderActivation= function(encryptedGuid,modulus,exponent,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.CheckCardHolderActivation(encryptedGuid,modulus,exponent,onSuccess,onFailed,userContext); }
+ShopperWebService.GetCUPNotificationData= function(onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.GetCUPNotificationData(onSuccess,onFailed,userContext); }
+ShopperWebService.GetCUPCardActivationStatus= function(strGuid,onSuccess,onFailed,userContext) {ShopperWebService._staticInstance.GetCUPCardActivationStatus(strGuid,onSuccess,onFailed,userContext); }
+var gtc = Sys.Net.WebServiceProxy._generateTypedConstructor;
+Type.registerNamespace('System.Data');
+if (typeof(System.Data.DataSet) === 'undefined') {
+System.Data.DataSet=gtc("System.Data.DataSet");
+System.Data.DataSet.registerClass('System.Data.DataSet');
+}
+Type.registerNamespace('Acculynk.Data');
+if (typeof(Acculynk.Data.PaymentType) === 'undefined') {
+Acculynk.Data.PaymentType = function() { throw Error.invalidOperation(); }
+Acculynk.Data.PaymentType.prototype = {Uknown: 0,Debit: 1,ATM: 2}
+Acculynk.Data.PaymentType.registerEnum('Acculynk.Data.PaymentType', true);
+}

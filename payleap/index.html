@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- saved from url=(0023)http://192.241.235.49/# -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head runat="server"><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title></title>
+   <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> 
+    <script src="./payleap_test_page_files/MerchantScript_v1.3.js" type="text/javascript"></script><link href="./payleap_test_page_files/StyleSheet.css" rel="stylesheet" type="text/css">
+        <script src="./payleap_test_page_files/jquery.min.js"></script>
+    <script>
+        function accu_FunctionResponse(strResponse) {
+            switch (strResponse) {
+                case 'ACCU000': //PIN was received so merchant can process the authorization
+                    Acculynk._modalHide();
+                    $('#errorMessage').html("<b> ACCU000 received </b>");
+                    //document.getElementById("hStatus").value = "SUCCESS";
+                    //document.getElementById("hiddenStatus").click();
+                    break;
+                case 'ACCU200': //user pressed 'cancel' button so merchant may process as credit
+                    Acculynk._modalHide();
+                    $('#errorMessage').html("<b> ACCU200 received </b>");
+                    //document.getElementById("hStatus").value = "CANCEL";
+                    //document.getElementById("hiddenStatus").click();
+                    break;
+                case 'ACCU400': //user was inactive
+                    Acculynk._modalHide();
+                    $('#errorMessage').html("<b> ACCU400 received </b>");
+                    //document.getElementById("hStatus").value = "INACTIVE";
+                    //document.getElementById("hiddenStatus").click();
+                    break;
+                case 'ACCU600': //bad data was posted to Acculynk
+                    Acculynk._modalHide();
+                    $('#errorMessage').html("<b> ACCU600 received </b>");
+                    //document.getElementById("hStatus").value = "BADPOST";
+                    //document.getElementById("hiddenStatus").click();
+                    break;
+                case 'ACCU800': //general catch all error
+                    Acculynk._modalHide();
+                    $('#errorMessage').html("<b> ACCU800 received </b>");
+                    //alert("ACCU800");
+                    //document.getElementById("hStatus").value = "ERROR";
+                    //document.getElementById("hiddenStatus").click();
+                    break;
+                case 'ACCU999': //modal popup was opened successfully
+                    //no action necessary, but open for merchant to use 
+                    $('#errorMessage').html("<b> ACCU999 received </b>");
+                    break;
+                default:
+                    break;
+
+            }
+        }
+
+            function startIT() {
+                if(Acculynk.browserCheck())
+                    Acculynk.PINPadLoad();
+                else
+                    alert('browser not compatible');
+            }
+
+            var callCreateForm = function() {
+                var guid = $('#txtGUID').val();
+                var modulus = $('#txtModulus').val();
+                var exponent = $('#txtExponent').val();
+                var last4 = $('#txtLast4').val();
+                Acculynk.createForm(guid, last4, modulus, exponent);
+            }
+
+            $(document).ready(function () {
+                $('#btnSubmit').click(function () {
+                    callCreateForm();
+                    startIT();
+                    return false;
+                });
+            });
+    </script>
+</head>
+<body>
+        <div id="accu_screen" style="display: none;"></div>
+        <div id="accu_loading" style="display: none;"><table style="height:320px; width:500px; background-color: white; border: 1px solid #000000;"><tbody><tr style="height:100px;"></tr><tr style="height:40px;"><td align="center" colspan="8" style="font-size: 30px;"><b>Loading</b></td></tr><tr style="height:25px;"><td style="width:175px;"></td><td id="accu_dot0" style="border: 1px solid rgb(0, 0, 0); width: 25px; background-color: rgb(221, 221, 221);"></td><td id="accu_dot1" style="border: 1px solid rgb(0, 0, 0); width: 25px; background-color: rgb(221, 221, 221);"></td><td id="accu_dot2" style="border: 1px solid rgb(0, 0, 0); width: 25px; background-color: rgb(221, 221, 221);"></td><td id="accu_dot3" style="border: 1px solid rgb(0, 0, 0); width: 25px; background-color: rgb(221, 221, 221);"></td><td id="accu_dot4" style="border: 1px solid rgb(0, 0, 0); width: 25px; background-color: rgb(0, 0, 153);"></td><td id="accu_dot5" style="border: 1px solid #000000; width:25px; background-color: #DDDDDD;"></td><td style="width:175px;"></td></tr><tr style="height:130px;"><td colspan="8"></td></tr></tbody></table></div>
+        <div id="accu_keypad" style="display: none;"><iframe id="MYiframe" name="Nameiframe" height="390" width="500" frameborder="0" scrolling="no" allowtransparency="true"></iframe></div>
+        <div id="accu_form" style="display:none;"><form target="Nameiframe" action="./payleap_test_page_files/PINPad.html" name="iForm" method="post"><input id="GUID" type="hidden" name="GUID" value="5b5bc1f1-8167-1729-a27f-83067e2b9142"><input id="CCLastFour" type="hidden" name="CCLastFour" value="4444"><input id="Mod" type="hidden" name="Mod" value="AFFE07D431EED7432CA7740A81C0E56BE4E2A01F4195FBFC16007F1EE00E06F8AB509963AE13CE46E0156CD1F882B90F2EC111322724A044F7EDCBF64EE751505CDB2505E2589C2EB89B9644E3A4796D3D43661F1EF3BBE58927640134F2EA8A5BBD6AEBEFE8B95FD2CCF622663F7E8EDE7A6A8FBCED0091CB97FB6365C7CD57"><input id="Exp" type="hidden" name="Exp" value="010001"><input id="strIFrameURL" type="hidden" name="strIFrameURL" value=""></form></div>
+        <div id="accu_issuer" style="display:none;"></div>
+    <nav class="navbar">
+        <div class="navbar-nav">
+            <a class="navbar-brand" href="http://192.241.235.49/MerchantPage.aspx"><h1>Carnival Testing site</h1></a>
+        </div>
+    </nav>
+    <div class="container">
+            <form id="form1" runat="server" _lpchecked="1">
+                <div class="row">
+
+            <div class="span6"><h2 class="">Card Number</h2></div>
+            <div class="span6"><input class=" form-control input-lg" id="txtCardNumber" type="text" placeholder="Card Number" runat="server" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==); background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;">  </div>
+            <br>
+                <div class="span6"><asp:button runat="server" id="btnInitiate" class="btn btn-lg btn-primary" text="Initiate a Transaction" onclick="btnInitiate_Click"> 
+                </asp:button></div>
+                <br>
+
+                <div class="span6">
+                    <asp:label runat="server" id="lblErrorMsg" value="">
+                    <br>
+                </asp:label></div>               
+           
+            <div class="span6"><h2 class="">Transaction ID</h2></div>
+            <div class="span6"><input class=" form-control input-lg" id="txtTranID" type="text" placeholder="TranID" runat="server">  </div>
+            <div class="span6"><h2 class="">GUID</h2></div>
+            <div class="span6"><input class=" form-control input-lg" id="txtGUID" type="text" placeholder="GUID" runat="server">  </div>
+            <div class="span6"><h2 class="">Modulus</h2></div>
+                <div class="span6"><input class="form-control input-lg" id="txtModulus" type="text" value="" placeholder="Modulus" runat="server"> </div>
+            <div class="span6"><h2 class="">Exponent</h2></div>
+                <div class="span6"><input class="form-control input-lg" id="txtExponent" type="text" value="" placeholder="Exponent" runat="server"> </div>
+            <div class="span6"><h2 class="">Last 4 of Card</h2></div>
+                <div class="span6"><input class="form-control input-lg" id="txtLast4" type="text" value="" placeholder="Last 4 of Card" runat="server"> </div>
+            <br>
+            <div class="span6"><button id="btnSubmit" class="btn btn-lg btn-primary"> Load Pin Pad </button>    </div>
+            <br>
+            <div class="alert alert-warning"><p class="has-error" id="errorMessage"><b> ACCU800 received </b></p></div>
+        </div>
+         </form>
+    </div>
+
+
+
+<script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }}catch(e){}</script></body></html>
